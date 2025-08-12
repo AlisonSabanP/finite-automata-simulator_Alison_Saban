@@ -8,3 +8,23 @@ class Automata  :
         self.states = data_automata['states'],
         self.transitions = data_automata['transitions'],
         self.test_string = data_automata.get('test_string', [])
+    
+    def validate(self):
+
+        if self.initial_state not in self.states:
+            return False
+
+        if not self.initial_state:
+            return False
+        
+        if not self.acceptance_states:
+            return False
+        
+        for state in self.acceptance_states:
+            if state not in self.states:
+                return False
+                
+        if len(self.alphabet) == 0:
+            return False
+            
+        
