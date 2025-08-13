@@ -1,4 +1,4 @@
-class Automata  : 
+class Automata(): 
     def __init__(self, data_automata):
         self.id = data_automata['id'],
         self.name = data_automata['name'],
@@ -10,11 +10,15 @@ class Automata  :
         self.test_string = data_automata.get('test_string', [])
     
     def validate(self):
-
-        if self.initial_state not in self.states:
-            return False
+        required_fields = ["id", "name", "initial_state", "acceptance_states", "alphabet", "states", "transitions"]
+        for field in required_fields:
+            if not hasattr(self, field) or getattr(self, field) is None:
+                return False
 
         if not self.initial_state:
+            return False
+
+        if self.initial_state not in self.states:
             return False
         
         if not self.acceptance_states:
