@@ -33,3 +33,8 @@ ejemplo de un diagrama generado: generated_diagrams/automata_1_1723456789.png
 --Archivo json de ejemplo--
 JSON_example/JSON_entry.json es un archivo de ejemplo que contiene 10 automatas, el cual tiene 2 que son no validos (el automata 6 y el 9)
 
+
+--pruebas unitarias--
+ejecutar pruebas unitarias: python -m unittest tests/test_automata.py
+
+pruebas unitarias con detalle: python -m unittest tests/test_automata.py -v
