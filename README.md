@@ -38,3 +38,16 @@ JSON_example/JSON_entry.json es un archivo de ejemplo que contiene 10 automatas,
 ejecutar pruebas unitarias: python -m unittest tests/test_automata.py
 
 pruebas unitarias con detalle: python -m unittest tests/test_automata.py -v
+
+
+--probar api en postman--
+1. ejecutar la app con: python main.py
+2. crear un request en postman.
+3. utilizar el método POST
+4. URL: http://localhost:1804/process-automata
+5. en body utilizar -> form-data.
+6. agregar Key -> "file" (exactamente como esta escrito, con minuscula)
+    -cambiamos el tipo de text a file 
+    -en select file, selecciona el archivo: JSON_entry.json
+7. presiona send y espera la respuesta
+8. revisa la carpeta generated_diagrams paraver los diagramas que se generaron.

@@ -8,5 +8,5 @@ app.register_blueprint(api)
 def home():
     return 'hello from flask'
 
-    if __name__ == '__main__':
-        app.run(debug=True, port=1804) 
+if __name__ == '__main__':
+    app.run( port=1804) 

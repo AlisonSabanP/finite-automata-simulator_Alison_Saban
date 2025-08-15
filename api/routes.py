@@ -17,7 +17,6 @@ def process_automata():
 
     try:
         data = json.load(file)
-        print(data)
     except Exception as e:
         return jsonify({"error": f"Error al leer JSON: {str(e)}"}), 400
 
