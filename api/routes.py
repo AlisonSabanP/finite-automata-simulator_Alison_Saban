@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app.automata import Automata
+from services.diagram_generator import generate_diagram
 import json
 
 api = Blueprint('api', __name__)
@@ -50,6 +51,7 @@ def process_automata():
         else:
             result["success"] = True
             result["inputs_validation"] = automaton.validate_inputs()
+            generate_diagram(automaton)
         
         results.append(result)
 
